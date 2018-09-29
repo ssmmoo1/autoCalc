@@ -1,0 +1,2 @@
+# autoCalc
+Automation for MotoCalc
