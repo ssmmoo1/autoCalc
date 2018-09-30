@@ -1,0 +1,36 @@
+import pandas as pd
+import plotly as py
+import plotly.graph_objs as go
+
+data = pd.read_excel("MotorAnalysis.xlsx")
+#print(data)
+key1 = "Motor"
+key2 = "Thrust"
+
+
+xd = data[key1]
+yd = data[key2]
+
+'''
+traces=[]
+for i in range(0, len(data)):
+    trace0 = go.Scattergl(
+        x=[data.loc[i][key1]],
+        y=[data.loc[i][key2]],
+        mode='markers',
+        text=str(i)
+
+
+        )
+
+    traces.append(trace0)
+
+'''
+
+
+trace = go.Scattergl(x=xd,y=yd, mode='markers')
+
+
+
+
+py.plotly.plot_url = py.offline.plot([trace], filename="testGraph.html")
